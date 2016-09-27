@@ -1,0 +1,18 @@
+#Following is a python code that I wrote for Basic Bit Manipulation practise problem at Hacker Earth.
+#The programs counts the number of 'one's(1's)' in the given number
+
+test = int(input("Enter the number of test cases: "))   #To specify the number of test cases
+run = count = 0                                         #Defining variable for later use
+                                                        #Starting the loop which runs for the number of times specified 
+for i in range (test):                                  #by the number of cases test case
+    case = int(input("Enter the number: "))             #Taking the number for which the calculation is to be made
+    def count_one(value):                               #Defining the function which counts the number of ones in the bits of the number
+        global count
+        count = 0
+        run = int(value)
+        while run:
+            run = run & (run - 1)
+            count = count + 1
+        print(count)
+    i = i +1
+    count_one(case)
